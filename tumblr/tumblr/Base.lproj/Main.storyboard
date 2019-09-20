@@ -38,6 +38,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="posterView" destination="uxp-J9-aes" id="Ki7-WS-hlZ"/>
+                                            <segue destination="eIN-PB-sHM" kind="show" id="Yyu-1p-GTn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -54,6 +55,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940.57971014492762" y="774.77678571428567"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="Amv-GJ-uEY">
+            <objects>
+                <viewController id="eIN-PB-sHM" customClass="PhotoDetailsViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q8X-FS-dSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pjb-co-sV9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lyt-L9-JSV"/>
+                    </view>
+                    <connections>
+                        <outlet property="posterView" destination="pjb-co-sV9" id="EU2-G9-U2V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hra-C8-sG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769.5652173913045" y="774.77678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CRa-DP-X40">
