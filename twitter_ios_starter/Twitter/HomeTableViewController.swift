@@ -19,6 +19,10 @@ class HomeTableViewController: UITableViewController {
         loadTweet()
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweet()
+    }
     
     func loadTweet(){
         
@@ -45,7 +49,7 @@ class HomeTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"tweetCell",for: indexPath) as! TweetCellTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier:"tweetCell",for: indexPath) as! TweetCellTableViewCell
         
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         cell.userNameLabel.text = user["name"] as? String
@@ -59,6 +63,10 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data{
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }
